@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import assert from 'node:assert';
 
+const TEACHERS = JSON.parse(fs.readFileSync('data/teachers.json', 'utf8'));
 const SITE = 'https://leeyejunzero.github.io/MuanTutor/';
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 
@@ -246,8 +247,8 @@ page('teachers/', {
     sec('white', '어떤 과목 선생님을 찾으세요?', '과목을 누르면 익명 선생님 소개 예시와 상담 안내를 볼 수 있습니다.', teacherLinks()), final()].join('\n')
 });
 for (const s of SUBJECTS) {
-  const examples = [['김*준',13],['김O영',18],['전O호',11],['박*진',16],['이O은',19],['정*현',14],['최O서',12],['윤*민',17],['강O우',15],['조*연',20],['한O수',11],['오*빈',18],['서O진',14],['신*경',16],['임O훈',12],['장*희',19],['송O원',17],['권*영',13],['배O현',10],['문*서',15]];
-  const renderCards = (list) => '<div class="teacher-grid">' + list.map(([name, years]) => `<article class="box teacher-card"><div class="teacher-avatar" aria-hidden="true">${name[0]}</div><h3>${name} 선생님</h3><p class="teacher-subject">${s.n} 1:1 화상과외</p><p class="teacher-years"><strong>수업 경력 ${years}년</strong></p><button class="btn btn-pri" type="button" data-subject="${s.n}">${s.n} 선생님 매칭 상담</button></article>`).join('') + '</div>';
+  const examples = TEACHERS[s.slug];
+  const renderCards = (list) => '<div class="teacher-grid">' + list.map(({name, years, focusIndex}) => `<article class="box teacher-card"><div class="teacher-avatar" aria-hidden="true">${esc(name[0])}</div><h3>${esc(name)} 선생님</h3><p class="teacher-subject">${s.n} 1:1 화상과외</p><p class="teacher-years"><strong>수업 경력 ${years}년</strong></p><p class="teacher-focus">수업 분야 · ${esc(s.courses[focusIndex % s.courses.length])}</p><button class="btn btn-pri" type="button" data-subject="${s.n}">${s.n} 선생님 매칭 상담</button></article>`).join('') + '</div>';
   const cards = '<aside class="teacher-notice"><strong>소개용 가상 프로필</strong><p>아래 20명의 이름과 경력은 실제 등록·배정 선생님 정보가 아닙니다. 배정 가능한 선생님의 경력과 수업 시간은 상담 후 안내합니다.</p></aside>' + renderCards(examples.slice(0,8)) + '<details class="teacher-more"><summary>선생님 12명 더 보기</summary>' + renderCards(examples.slice(8)) + '</details>';
   page(`teachers/${s.slug}/`, {
     PRESET: s.n,

@@ -1,0 +1,1532 @@
+{
+  "math": [
+    {
+      "name": "김*준",
+      "years": 10,
+      "focusIndex": 0
+    },
+    {
+      "name": "이O진",
+      "years": 17,
+      "focusIndex": 1
+    },
+    {
+      "name": "박*서",
+      "years": 13,
+      "focusIndex": 2
+    },
+    {
+      "name": "최O연",
+      "years": 20,
+      "focusIndex": 3
+    },
+    {
+      "name": "정*경",
+      "years": 16,
+      "focusIndex": 0
+    },
+    {
+      "name": "강O원",
+      "years": 12,
+      "focusIndex": 1
+    },
+    {
+      "name": "윤*혁",
+      "years": 19,
+      "focusIndex": 2
+    },
+    {
+      "name": "장O영",
+      "years": 15,
+      "focusIndex": 3
+    },
+    {
+      "name": "임*은",
+      "years": 11,
+      "focusIndex": 0
+    },
+    {
+      "name": "한O민",
+      "years": 18,
+      "focusIndex": 1
+    },
+    {
+      "name": "오*수",
+      "years": 14,
+      "focusIndex": 2
+    },
+    {
+      "name": "서O훈",
+      "years": 10,
+      "focusIndex": 3
+    },
+    {
+      "name": "신*성",
+      "years": 17,
+      "focusIndex": 0
+    },
+    {
+      "name": "권O솔",
+      "years": 13,
+      "focusIndex": 1
+    },
+    {
+      "name": "황*호",
+      "years": 20,
+      "focusIndex": 2
+    },
+    {
+      "name": "안O현",
+      "years": 16,
+      "focusIndex": 3
+    },
+    {
+      "name": "송*우",
+      "years": 12,
+      "focusIndex": 0
+    },
+    {
+      "name": "유O빈",
+      "years": 19,
+      "focusIndex": 1
+    },
+    {
+      "name": "홍*희",
+      "years": 15,
+      "focusIndex": 2
+    },
+    {
+      "name": "전O아",
+      "years": 11,
+      "focusIndex": 3
+    }
+  ],
+  "english": [
+    {
+      "name": "최*영",
+      "years": 13,
+      "focusIndex": 1
+    },
+    {
+      "name": "정O은",
+      "years": 20,
+      "focusIndex": 2
+    },
+    {
+      "name": "강*민",
+      "years": 16,
+      "focusIndex": 3
+    },
+    {
+      "name": "윤O수",
+      "years": 12,
+      "focusIndex": 0
+    },
+    {
+      "name": "장*훈",
+      "years": 19,
+      "focusIndex": 1
+    },
+    {
+      "name": "임O성",
+      "years": 15,
+      "focusIndex": 2
+    },
+    {
+      "name": "한*솔",
+      "years": 11,
+      "focusIndex": 3
+    },
+    {
+      "name": "오O호",
+      "years": 18,
+      "focusIndex": 0
+    },
+    {
+      "name": "서*현",
+      "years": 14,
+      "focusIndex": 1
+    },
+    {
+      "name": "신O우",
+      "years": 10,
+      "focusIndex": 2
+    },
+    {
+      "name": "권*빈",
+      "years": 17,
+      "focusIndex": 3
+    },
+    {
+      "name": "황O희",
+      "years": 13,
+      "focusIndex": 0
+    },
+    {
+      "name": "안*아",
+      "years": 20,
+      "focusIndex": 1
+    },
+    {
+      "name": "송O준",
+      "years": 16,
+      "focusIndex": 2
+    },
+    {
+      "name": "유*진",
+      "years": 12,
+      "focusIndex": 3
+    },
+    {
+      "name": "홍O서",
+      "years": 19,
+      "focusIndex": 0
+    },
+    {
+      "name": "전*연",
+      "years": 15,
+      "focusIndex": 1
+    },
+    {
+      "name": "김O경",
+      "years": 11,
+      "focusIndex": 2
+    },
+    {
+      "name": "이*원",
+      "years": 18,
+      "focusIndex": 3
+    },
+    {
+      "name": "박O혁",
+      "years": 14,
+      "focusIndex": 0
+    }
+  ],
+  "korean": [
+    {
+      "name": "윤*호",
+      "years": 16,
+      "focusIndex": 2
+    },
+    {
+      "name": "장O현",
+      "years": 12,
+      "focusIndex": 3
+    },
+    {
+      "name": "임*우",
+      "years": 19,
+      "focusIndex": 0
+    },
+    {
+      "name": "한O빈",
+      "years": 15,
+      "focusIndex": 1
+    },
+    {
+      "name": "오*희",
+      "years": 11,
+      "focusIndex": 2
+    },
+    {
+      "name": "서O아",
+      "years": 18,
+      "focusIndex": 3
+    },
+    {
+      "name": "신*준",
+      "years": 14,
+      "focusIndex": 0
+    },
+    {
+      "name": "권O진",
+      "years": 10,
+      "focusIndex": 1
+    },
+    {
+      "name": "황*서",
+      "years": 17,
+      "focusIndex": 2
+    },
+    {
+      "name": "안O연",
+      "years": 13,
+      "focusIndex": 3
+    },
+    {
+      "name": "송*경",
+      "years": 20,
+      "focusIndex": 0
+    },
+    {
+      "name": "유O원",
+      "years": 16,
+      "focusIndex": 1
+    },
+    {
+      "name": "홍*혁",
+      "years": 12,
+      "focusIndex": 2
+    },
+    {
+      "name": "전O영",
+      "years": 19,
+      "focusIndex": 3
+    },
+    {
+      "name": "김*은",
+      "years": 15,
+      "focusIndex": 0
+    },
+    {
+      "name": "이O민",
+      "years": 11,
+      "focusIndex": 1
+    },
+    {
+      "name": "박*수",
+      "years": 18,
+      "focusIndex": 2
+    },
+    {
+      "name": "최O훈",
+      "years": 14,
+      "focusIndex": 3
+    },
+    {
+      "name": "정*성",
+      "years": 10,
+      "focusIndex": 0
+    },
+    {
+      "name": "강O솔",
+      "years": 17,
+      "focusIndex": 1
+    }
+  ],
+  "science": [
+    {
+      "name": "한*진",
+      "years": 19,
+      "focusIndex": 3
+    },
+    {
+      "name": "오O서",
+      "years": 15,
+      "focusIndex": 0
+    },
+    {
+      "name": "서*연",
+      "years": 11,
+      "focusIndex": 1
+    },
+    {
+      "name": "신O경",
+      "years": 18,
+      "focusIndex": 2
+    },
+    {
+      "name": "권*원",
+      "years": 14,
+      "focusIndex": 3
+    },
+    {
+      "name": "황O혁",
+      "years": 10,
+      "focusIndex": 0
+    },
+    {
+      "name": "안*영",
+      "years": 17,
+      "focusIndex": 1
+    },
+    {
+      "name": "송O은",
+      "years": 13,
+      "focusIndex": 2
+    },
+    {
+      "name": "유*민",
+      "years": 20,
+      "focusIndex": 3
+    },
+    {
+      "name": "홍O수",
+      "years": 16,
+      "focusIndex": 0
+    },
+    {
+      "name": "전*훈",
+      "years": 12,
+      "focusIndex": 1
+    },
+    {
+      "name": "김O성",
+      "years": 19,
+      "focusIndex": 2
+    },
+    {
+      "name": "이*솔",
+      "years": 15,
+      "focusIndex": 3
+    },
+    {
+      "name": "박O호",
+      "years": 11,
+      "focusIndex": 0
+    },
+    {
+      "name": "최*현",
+      "years": 18,
+      "focusIndex": 1
+    },
+    {
+      "name": "정O우",
+      "years": 14,
+      "focusIndex": 2
+    },
+    {
+      "name": "강*빈",
+      "years": 10,
+      "focusIndex": 3
+    },
+    {
+      "name": "윤O희",
+      "years": 17,
+      "focusIndex": 0
+    },
+    {
+      "name": "장*아",
+      "years": 13,
+      "focusIndex": 1
+    },
+    {
+      "name": "임O준",
+      "years": 20,
+      "focusIndex": 2
+    }
+  ],
+  "social": [
+    {
+      "name": "신*은",
+      "years": 11,
+      "focusIndex": 0
+    },
+    {
+      "name": "권O민",
+      "years": 18,
+      "focusIndex": 1
+    },
+    {
+      "name": "황*수",
+      "years": 14,
+      "focusIndex": 2
+    },
+    {
+      "name": "안O훈",
+      "years": 10,
+      "focusIndex": 3
+    },
+    {
+      "name": "송*성",
+      "years": 17,
+      "focusIndex": 0
+    },
+    {
+      "name": "유O솔",
+      "years": 13,
+      "focusIndex": 1
+    },
+    {
+      "name": "홍*호",
+      "years": 20,
+      "focusIndex": 2
+    },
+    {
+      "name": "전O현",
+      "years": 16,
+      "focusIndex": 3
+    },
+    {
+      "name": "김*우",
+      "years": 12,
+      "focusIndex": 0
+    },
+    {
+      "name": "이O빈",
+      "years": 19,
+      "focusIndex": 1
+    },
+    {
+      "name": "박*희",
+      "years": 15,
+      "focusIndex": 2
+    },
+    {
+      "name": "최O아",
+      "years": 11,
+      "focusIndex": 3
+    },
+    {
+      "name": "정*준",
+      "years": 18,
+      "focusIndex": 0
+    },
+    {
+      "name": "강O진",
+      "years": 14,
+      "focusIndex": 1
+    },
+    {
+      "name": "윤*서",
+      "years": 10,
+      "focusIndex": 2
+    },
+    {
+      "name": "장O연",
+      "years": 17,
+      "focusIndex": 3
+    },
+    {
+      "name": "임*경",
+      "years": 13,
+      "focusIndex": 0
+    },
+    {
+      "name": "한O원",
+      "years": 20,
+      "focusIndex": 1
+    },
+    {
+      "name": "오*혁",
+      "years": 16,
+      "focusIndex": 2
+    },
+    {
+      "name": "서O영",
+      "years": 12,
+      "focusIndex": 3
+    }
+  ],
+  "history": [
+    {
+      "name": "안*현",
+      "years": 14,
+      "focusIndex": 1
+    },
+    {
+      "name": "송O우",
+      "years": 10,
+      "focusIndex": 2
+    },
+    {
+      "name": "유*빈",
+      "years": 17,
+      "focusIndex": 3
+    },
+    {
+      "name": "홍O희",
+      "years": 13,
+      "focusIndex": 0
+    },
+    {
+      "name": "전*아",
+      "years": 20,
+      "focusIndex": 1
+    },
+    {
+      "name": "김O준",
+      "years": 16,
+      "focusIndex": 2
+    },
+    {
+      "name": "이*진",
+      "years": 12,
+      "focusIndex": 3
+    },
+    {
+      "name": "박O서",
+      "years": 19,
+      "focusIndex": 0
+    },
+    {
+      "name": "최*연",
+      "years": 15,
+      "focusIndex": 1
+    },
+    {
+      "name": "정O경",
+      "years": 11,
+      "focusIndex": 2
+    },
+    {
+      "name": "강*원",
+      "years": 18,
+      "focusIndex": 3
+    },
+    {
+      "name": "윤O혁",
+      "years": 14,
+      "focusIndex": 0
+    },
+    {
+      "name": "장*영",
+      "years": 10,
+      "focusIndex": 1
+    },
+    {
+      "name": "임O은",
+      "years": 17,
+      "focusIndex": 2
+    },
+    {
+      "name": "한*민",
+      "years": 13,
+      "focusIndex": 3
+    },
+    {
+      "name": "오O수",
+      "years": 20,
+      "focusIndex": 0
+    },
+    {
+      "name": "서*훈",
+      "years": 16,
+      "focusIndex": 1
+    },
+    {
+      "name": "신O성",
+      "years": 12,
+      "focusIndex": 2
+    },
+    {
+      "name": "권*솔",
+      "years": 19,
+      "focusIndex": 3
+    },
+    {
+      "name": "황O호",
+      "years": 15,
+      "focusIndex": 0
+    }
+  ],
+  "physics": [
+    {
+      "name": "홍*서",
+      "years": 17,
+      "focusIndex": 2
+    },
+    {
+      "name": "전O연",
+      "years": 13,
+      "focusIndex": 3
+    },
+    {
+      "name": "김*경",
+      "years": 20,
+      "focusIndex": 0
+    },
+    {
+      "name": "이O원",
+      "years": 16,
+      "focusIndex": 1
+    },
+    {
+      "name": "박*혁",
+      "years": 12,
+      "focusIndex": 2
+    },
+    {
+      "name": "최O영",
+      "years": 19,
+      "focusIndex": 3
+    },
+    {
+      "name": "정*은",
+      "years": 15,
+      "focusIndex": 0
+    },
+    {
+      "name": "강O민",
+      "years": 11,
+      "focusIndex": 1
+    },
+    {
+      "name": "윤*수",
+      "years": 18,
+      "focusIndex": 2
+    },
+    {
+      "name": "장O훈",
+      "years": 14,
+      "focusIndex": 3
+    },
+    {
+      "name": "임*성",
+      "years": 10,
+      "focusIndex": 0
+    },
+    {
+      "name": "한O솔",
+      "years": 17,
+      "focusIndex": 1
+    },
+    {
+      "name": "오*호",
+      "years": 13,
+      "focusIndex": 2
+    },
+    {
+      "name": "서O현",
+      "years": 20,
+      "focusIndex": 3
+    },
+    {
+      "name": "신*우",
+      "years": 16,
+      "focusIndex": 0
+    },
+    {
+      "name": "권O빈",
+      "years": 12,
+      "focusIndex": 1
+    },
+    {
+      "name": "황*희",
+      "years": 19,
+      "focusIndex": 2
+    },
+    {
+      "name": "안O아",
+      "years": 15,
+      "focusIndex": 3
+    },
+    {
+      "name": "송*준",
+      "years": 11,
+      "focusIndex": 0
+    },
+    {
+      "name": "유O진",
+      "years": 18,
+      "focusIndex": 1
+    }
+  ],
+  "chemistry": [
+    {
+      "name": "이*민",
+      "years": 20,
+      "focusIndex": 3
+    },
+    {
+      "name": "박O수",
+      "years": 16,
+      "focusIndex": 0
+    },
+    {
+      "name": "최*훈",
+      "years": 12,
+      "focusIndex": 1
+    },
+    {
+      "name": "정O성",
+      "years": 19,
+      "focusIndex": 2
+    },
+    {
+      "name": "강*솔",
+      "years": 15,
+      "focusIndex": 3
+    },
+    {
+      "name": "윤O호",
+      "years": 11,
+      "focusIndex": 0
+    },
+    {
+      "name": "장*현",
+      "years": 18,
+      "focusIndex": 1
+    },
+    {
+      "name": "임O우",
+      "years": 14,
+      "focusIndex": 2
+    },
+    {
+      "name": "한*빈",
+      "years": 10,
+      "focusIndex": 3
+    },
+    {
+      "name": "오O희",
+      "years": 17,
+      "focusIndex": 0
+    },
+    {
+      "name": "서*아",
+      "years": 13,
+      "focusIndex": 1
+    },
+    {
+      "name": "신O준",
+      "years": 20,
+      "focusIndex": 2
+    },
+    {
+      "name": "권*진",
+      "years": 16,
+      "focusIndex": 3
+    },
+    {
+      "name": "황O서",
+      "years": 12,
+      "focusIndex": 0
+    },
+    {
+      "name": "안*연",
+      "years": 19,
+      "focusIndex": 1
+    },
+    {
+      "name": "송O경",
+      "years": 15,
+      "focusIndex": 2
+    },
+    {
+      "name": "유*원",
+      "years": 11,
+      "focusIndex": 3
+    },
+    {
+      "name": "홍O혁",
+      "years": 18,
+      "focusIndex": 0
+    },
+    {
+      "name": "전*영",
+      "years": 14,
+      "focusIndex": 1
+    },
+    {
+      "name": "김O은",
+      "years": 10,
+      "focusIndex": 2
+    }
+  ],
+  "biology": [
+    {
+      "name": "정*우",
+      "years": 12,
+      "focusIndex": 0
+    },
+    {
+      "name": "강O빈",
+      "years": 19,
+      "focusIndex": 1
+    },
+    {
+      "name": "윤*희",
+      "years": 15,
+      "focusIndex": 2
+    },
+    {
+      "name": "장O아",
+      "years": 11,
+      "focusIndex": 3
+    },
+    {
+      "name": "임*준",
+      "years": 18,
+      "focusIndex": 0
+    },
+    {
+      "name": "한O진",
+      "years": 14,
+      "focusIndex": 1
+    },
+    {
+      "name": "오*서",
+      "years": 10,
+      "focusIndex": 2
+    },
+    {
+      "name": "서O연",
+      "years": 17,
+      "focusIndex": 3
+    },
+    {
+      "name": "신*경",
+      "years": 13,
+      "focusIndex": 0
+    },
+    {
+      "name": "권O원",
+      "years": 20,
+      "focusIndex": 1
+    },
+    {
+      "name": "황*혁",
+      "years": 16,
+      "focusIndex": 2
+    },
+    {
+      "name": "안O영",
+      "years": 12,
+      "focusIndex": 3
+    },
+    {
+      "name": "송*은",
+      "years": 19,
+      "focusIndex": 0
+    },
+    {
+      "name": "유O민",
+      "years": 15,
+      "focusIndex": 1
+    },
+    {
+      "name": "홍*수",
+      "years": 11,
+      "focusIndex": 2
+    },
+    {
+      "name": "전O훈",
+      "years": 18,
+      "focusIndex": 3
+    },
+    {
+      "name": "김*성",
+      "years": 14,
+      "focusIndex": 0
+    },
+    {
+      "name": "이O솔",
+      "years": 10,
+      "focusIndex": 1
+    },
+    {
+      "name": "박*호",
+      "years": 17,
+      "focusIndex": 2
+    },
+    {
+      "name": "최O현",
+      "years": 13,
+      "focusIndex": 3
+    }
+  ],
+  "earth-science": [
+    {
+      "name": "장*연",
+      "years": 15,
+      "focusIndex": 1
+    },
+    {
+      "name": "임O경",
+      "years": 11,
+      "focusIndex": 2
+    },
+    {
+      "name": "한*원",
+      "years": 18,
+      "focusIndex": 3
+    },
+    {
+      "name": "오O혁",
+      "years": 14,
+      "focusIndex": 0
+    },
+    {
+      "name": "서*영",
+      "years": 10,
+      "focusIndex": 1
+    },
+    {
+      "name": "신O은",
+      "years": 17,
+      "focusIndex": 2
+    },
+    {
+      "name": "권*민",
+      "years": 13,
+      "focusIndex": 3
+    },
+    {
+      "name": "황O수",
+      "years": 20,
+      "focusIndex": 0
+    },
+    {
+      "name": "안*훈",
+      "years": 16,
+      "focusIndex": 1
+    },
+    {
+      "name": "송O성",
+      "years": 12,
+      "focusIndex": 2
+    },
+    {
+      "name": "유*솔",
+      "years": 19,
+      "focusIndex": 3
+    },
+    {
+      "name": "홍O호",
+      "years": 15,
+      "focusIndex": 0
+    },
+    {
+      "name": "전*현",
+      "years": 11,
+      "focusIndex": 1
+    },
+    {
+      "name": "김O우",
+      "years": 18,
+      "focusIndex": 2
+    },
+    {
+      "name": "이*빈",
+      "years": 14,
+      "focusIndex": 3
+    },
+    {
+      "name": "박O희",
+      "years": 10,
+      "focusIndex": 0
+    },
+    {
+      "name": "최*아",
+      "years": 17,
+      "focusIndex": 1
+    },
+    {
+      "name": "정O준",
+      "years": 13,
+      "focusIndex": 2
+    },
+    {
+      "name": "강*진",
+      "years": 20,
+      "focusIndex": 3
+    },
+    {
+      "name": "윤O서",
+      "years": 16,
+      "focusIndex": 0
+    }
+  ],
+  "coding": [
+    {
+      "name": "오*수",
+      "years": 18,
+      "focusIndex": 2
+    },
+    {
+      "name": "서O훈",
+      "years": 14,
+      "focusIndex": 3
+    },
+    {
+      "name": "신*성",
+      "years": 10,
+      "focusIndex": 0
+    },
+    {
+      "name": "권O솔",
+      "years": 17,
+      "focusIndex": 1
+    },
+    {
+      "name": "황*호",
+      "years": 13,
+      "focusIndex": 2
+    },
+    {
+      "name": "안O현",
+      "years": 20,
+      "focusIndex": 3
+    },
+    {
+      "name": "송*우",
+      "years": 16,
+      "focusIndex": 0
+    },
+    {
+      "name": "유O빈",
+      "years": 12,
+      "focusIndex": 1
+    },
+    {
+      "name": "홍*희",
+      "years": 19,
+      "focusIndex": 2
+    },
+    {
+      "name": "전O아",
+      "years": 15,
+      "focusIndex": 3
+    },
+    {
+      "name": "김*준",
+      "years": 11,
+      "focusIndex": 0
+    },
+    {
+      "name": "이O진",
+      "years": 18,
+      "focusIndex": 1
+    },
+    {
+      "name": "박*서",
+      "years": 14,
+      "focusIndex": 2
+    },
+    {
+      "name": "최O연",
+      "years": 10,
+      "focusIndex": 3
+    },
+    {
+      "name": "정*경",
+      "years": 17,
+      "focusIndex": 0
+    },
+    {
+      "name": "강O원",
+      "years": 13,
+      "focusIndex": 1
+    },
+    {
+      "name": "윤*혁",
+      "years": 20,
+      "focusIndex": 2
+    },
+    {
+      "name": "장O영",
+      "years": 16,
+      "focusIndex": 3
+    },
+    {
+      "name": "임*은",
+      "years": 12,
+      "focusIndex": 0
+    },
+    {
+      "name": "한O민",
+      "years": 19,
+      "focusIndex": 1
+    }
+  ],
+  "english-conversation": [
+    {
+      "name": "권*빈",
+      "years": 10,
+      "focusIndex": 3
+    },
+    {
+      "name": "황O희",
+      "years": 17,
+      "focusIndex": 0
+    },
+    {
+      "name": "안*아",
+      "years": 13,
+      "focusIndex": 1
+    },
+    {
+      "name": "송O준",
+      "years": 20,
+      "focusIndex": 2
+    },
+    {
+      "name": "유*진",
+      "years": 16,
+      "focusIndex": 3
+    },
+    {
+      "name": "홍O서",
+      "years": 12,
+      "focusIndex": 0
+    },
+    {
+      "name": "전*연",
+      "years": 19,
+      "focusIndex": 1
+    },
+    {
+      "name": "김O경",
+      "years": 15,
+      "focusIndex": 2
+    },
+    {
+      "name": "이*원",
+      "years": 11,
+      "focusIndex": 3
+    },
+    {
+      "name": "박O혁",
+      "years": 18,
+      "focusIndex": 0
+    },
+    {
+      "name": "최*영",
+      "years": 14,
+      "focusIndex": 1
+    },
+    {
+      "name": "정O은",
+      "years": 10,
+      "focusIndex": 2
+    },
+    {
+      "name": "강*민",
+      "years": 17,
+      "focusIndex": 3
+    },
+    {
+      "name": "윤O수",
+      "years": 13,
+      "focusIndex": 0
+    },
+    {
+      "name": "장*훈",
+      "years": 20,
+      "focusIndex": 1
+    },
+    {
+      "name": "임O성",
+      "years": 16,
+      "focusIndex": 2
+    },
+    {
+      "name": "한*솔",
+      "years": 12,
+      "focusIndex": 3
+    },
+    {
+      "name": "오O호",
+      "years": 19,
+      "focusIndex": 0
+    },
+    {
+      "name": "서*현",
+      "years": 15,
+      "focusIndex": 1
+    },
+    {
+      "name": "신O우",
+      "years": 11,
+      "focusIndex": 2
+    }
+  ],
+  "essay": [
+    {
+      "name": "송*경",
+      "years": 13,
+      "focusIndex": 0
+    },
+    {
+      "name": "유O원",
+      "years": 20,
+      "focusIndex": 1
+    },
+    {
+      "name": "홍*혁",
+      "years": 16,
+      "focusIndex": 2
+    },
+    {
+      "name": "전O영",
+      "years": 12,
+      "focusIndex": 3
+    },
+    {
+      "name": "김*은",
+      "years": 19,
+      "focusIndex": 0
+    },
+    {
+      "name": "이O민",
+      "years": 15,
+      "focusIndex": 1
+    },
+    {
+      "name": "박*수",
+      "years": 11,
+      "focusIndex": 2
+    },
+    {
+      "name": "최O훈",
+      "years": 18,
+      "focusIndex": 3
+    },
+    {
+      "name": "정*성",
+      "years": 14,
+      "focusIndex": 0
+    },
+    {
+      "name": "강O솔",
+      "years": 10,
+      "focusIndex": 1
+    },
+    {
+      "name": "윤*호",
+      "years": 17,
+      "focusIndex": 2
+    },
+    {
+      "name": "장O현",
+      "years": 13,
+      "focusIndex": 3
+    },
+    {
+      "name": "임*우",
+      "years": 20,
+      "focusIndex": 0
+    },
+    {
+      "name": "한O빈",
+      "years": 16,
+      "focusIndex": 1
+    },
+    {
+      "name": "오*희",
+      "years": 12,
+      "focusIndex": 2
+    },
+    {
+      "name": "서O아",
+      "years": 19,
+      "focusIndex": 3
+    },
+    {
+      "name": "신*준",
+      "years": 15,
+      "focusIndex": 0
+    },
+    {
+      "name": "권O진",
+      "years": 11,
+      "focusIndex": 1
+    },
+    {
+      "name": "황*서",
+      "years": 18,
+      "focusIndex": 2
+    },
+    {
+      "name": "안O연",
+      "years": 14,
+      "focusIndex": 3
+    }
+  ],
+  "self-study": [
+    {
+      "name": "전*훈",
+      "years": 16,
+      "focusIndex": 1
+    },
+    {
+      "name": "김O성",
+      "years": 12,
+      "focusIndex": 2
+    },
+    {
+      "name": "이*솔",
+      "years": 19,
+      "focusIndex": 3
+    },
+    {
+      "name": "박O호",
+      "years": 15,
+      "focusIndex": 0
+    },
+    {
+      "name": "최*현",
+      "years": 11,
+      "focusIndex": 1
+    },
+    {
+      "name": "정O우",
+      "years": 18,
+      "focusIndex": 2
+    },
+    {
+      "name": "강*빈",
+      "years": 14,
+      "focusIndex": 3
+    },
+    {
+      "name": "윤O희",
+      "years": 10,
+      "focusIndex": 0
+    },
+    {
+      "name": "장*아",
+      "years": 17,
+      "focusIndex": 1
+    },
+    {
+      "name": "임O준",
+      "years": 13,
+      "focusIndex": 2
+    },
+    {
+      "name": "한*진",
+      "years": 20,
+      "focusIndex": 3
+    },
+    {
+      "name": "오O서",
+      "years": 16,
+      "focusIndex": 0
+    },
+    {
+      "name": "서*연",
+      "years": 12,
+      "focusIndex": 1
+    },
+    {
+      "name": "신O경",
+      "years": 19,
+      "focusIndex": 2
+    },
+    {
+      "name": "권*원",
+      "years": 15,
+      "focusIndex": 3
+    },
+    {
+      "name": "황O혁",
+      "years": 11,
+      "focusIndex": 0
+    },
+    {
+      "name": "안*영",
+      "years": 18,
+      "focusIndex": 1
+    },
+    {
+      "name": "송O은",
+      "years": 14,
+      "focusIndex": 2
+    },
+    {
+      "name": "유*민",
+      "years": 10,
+      "focusIndex": 3
+    },
+    {
+      "name": "홍O수",
+      "years": 17,
+      "focusIndex": 0
+    }
+  ],
+  "foreign-language": [
+    {
+      "name": "박*희",
+      "years": 19,
+      "focusIndex": 2
+    },
+    {
+      "name": "최O아",
+      "years": 15,
+      "focusIndex": 3
+    },
+    {
+      "name": "정*준",
+      "years": 11,
+      "focusIndex": 0
+    },
+    {
+      "name": "강O진",
+      "years": 18,
+      "focusIndex": 1
+    },
+    {
+      "name": "윤*서",
+      "years": 14,
+      "focusIndex": 2
+    },
+    {
+      "name": "장O연",
+      "years": 10,
+      "focusIndex": 3
+    },
+    {
+      "name": "임*경",
+      "years": 17,
+      "focusIndex": 0
+    },
+    {
+      "name": "한O원",
+      "years": 13,
+      "focusIndex": 1
+    },
+    {
+      "name": "오*혁",
+      "years": 20,
+      "focusIndex": 2
+    },
+    {
+      "name": "서O영",
+      "years": 16,
+      "focusIndex": 3
+    },
+    {
+      "name": "신*은",
+      "years": 12,
+      "focusIndex": 0
+    },
+    {
+      "name": "권O민",
+      "years": 19,
+      "focusIndex": 1
+    },
+    {
+      "name": "황*수",
+      "years": 15,
+      "focusIndex": 2
+    },
+    {
+      "name": "안O훈",
+      "years": 11,
+      "focusIndex": 3
+    },
+    {
+      "name": "송*성",
+      "years": 18,
+      "focusIndex": 0
+    },
+    {
+      "name": "유O솔",
+      "years": 14,
+      "focusIndex": 1
+    },
+    {
+      "name": "홍*호",
+      "years": 10,
+      "focusIndex": 2
+    },
+    {
+      "name": "전O현",
+      "years": 17,
+      "focusIndex": 3
+    },
+    {
+      "name": "김*우",
+      "years": 13,
+      "focusIndex": 0
+    },
+    {
+      "name": "이O빈",
+      "years": 20,
+      "focusIndex": 1
+    }
+  ]
+}
