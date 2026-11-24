@@ -171,6 +171,12 @@ const faqLd = (faq) => ({ '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({
 function page(path, v) {
   const depth = path.split('/').filter(Boolean).length;
   const all = { BASE: depth ? `<base href="${'../'.repeat(depth)}">\n` : '', PRESET: '', SCHOOL: '', EXTRA: '', AREA_OPTIONS: areaOptions, FOOT: foot, URL: SITE + encodeURI(path), JSONLD: orgLd(), ...v };
+  if (path === 'teachers/') {
+    all.MAIN = all.MAIN.replace(/<div class="picker">[\s\S]*?<div class="subjects" data-tiles><\/div><\/div>/, '<div class="picker"><h2>어떤 과목 선생님을 찾으세요?</h2><p>과목을 누르면 선생님 소개 목록이 열립니다</p>' + teacherLinks() + '</div>');
+  } else if (path.startsWith('teachers/')) {
+    const subjectName = all.PRESET;
+    all.MAIN = all.MAIN.replace(/<section class="hero"[\s\S]*?<\/section>/, '<section class="doc white" style="padding-bottom:20px"><div class="wrap">' + crumb([['홈', './'], ['등록 선생님', 'teachers/'], [subjectName + '과외 선생님']]) + '<h1>무안 ' + subjectName + '과외 선생님 소개</h1></div></section>');
+  }
   all.OG_TITLE ??= all.TITLE.split(' | ')[0];
   const html = tpl.replace(/\{\{(\w+)\}\}/g, (m, k) => { assert.ok(k in all, `빠진 값: ${k} (${path})`); return all[k]; });
   if (path) fs.mkdirSync(path, { recursive: true });
