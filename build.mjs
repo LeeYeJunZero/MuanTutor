@@ -227,6 +227,9 @@ page('', {
     sec('white', '자주 묻는 질문', '', faqHtml(MAIN_FAQ), 'faq'), final()].join('\n')
 });
 
+// 실제 배정 명단이 없는 소개 예시: 이름·경력을 실제 프로필로 표시하지 않음.
+const teacherLinks = () => '<div class="subj-links">' + SUBJECTS.map((s) => `<a href="teachers/${s.slug}/">무안 ${s.n}과외 선생님</a>`).join('') + '</div>';
+
 // 숫자 안내에서 연결되는 목록·소개 페이지
 page('teachers/', {
   TITLE: '선생님 소개 · 무료 매칭 | 무안 화상과외',
@@ -234,8 +237,22 @@ page('teachers/', {
   KEYWORDS: '무안 과외 선생님,남악 과외 선생님,무안 화상과외',
   MAIN: [hero('우리 아이에게 맞는<br><span>선생님을 만나보세요</span>', '등록 선생님 500명 이상. 과목과 학년, 학습 목표를 상담한 뒤 선생님을 안내해 드립니다.', crumb([['홈', './'], ['선생님 소개']])),
     sec('', '선생님 매칭 안내', '학생에게 필요한 수업부터 확인합니다', '<div class="grid3"><article class="box"><h3>과목과 학년</h3><p>배우려는 과목과 현재 학년, 어려운 단원을 알려주세요.</p></article><article class="box"><h3>학습 목표와 시간</h3><p>학교 내신, 수능, 기초 보충 등 목표와 가능한 수업 시간을 확인합니다.</p></article><article class="box"><h3>30분 무료수업</h3><p>선생님과 직접 수업하며 설명 방식과 학습 속도를 확인하세요.</p></article></div>'),
-    sec('white', '어떤 과목 선생님을 찾으세요?', '과목별 수업 안내를 확인하고 상담 팝업에서 신청할 수 있습니다.', subjLinks(SUBJECTS)), final()].join('\n')
+    sec('white', '어떤 과목 선생님을 찾으세요?', '과목을 누르면 익명 선생님 소개 예시와 상담 안내를 볼 수 있습니다.', teacherLinks()), final()].join('\n')
 });
+for (const s of SUBJECTS) {
+  const examples = [['김*준', 10], ['김O영', 15], ['전O호', 20]];
+  const cards = '<div class="grid3">' + examples.map(([name, years]) => `<article class="box teacher-card"><span class="k">소개 예시 · 실제 배정 아님</span><div class="teacher-avatar" aria-hidden="true">${name[0]}</div><h3>${name} 선생님 <small>(예시)</small></h3><p class="teacher-subject">${s.n} 1:1 화상과외</p><p><strong>경력 ${years}년 설정 예시</strong></p><p>실제 선생님의 경력·수업 가능 시간은 상담 후 확인하여 안내합니다.</p><button class="btn btn-pri" type="button" data-subject="${s.n}">${s.n} 선생님 상담</button></article>`).join('') + '</div>';
+  page(`teachers/${s.slug}/`, {
+    PRESET: s.n,
+    TITLE: `무안 ${s.n}과외 선생님 소개 예시 · 매칭 상담 | 무안 화상과외`,
+    DESC: `무안 ${s.n}과외 익명 선생님 소개 예시. 실제 배정 선생님의 경력과 시간은 상담 후 확인하며 30분 무료수업을 신청할 수 있습니다.`,
+    KEYWORDS: `무안 ${s.n}과외 선생님,남악 ${s.n}과외 선생님`,
+    MAIN: [hero(`무안 ${s.n}과외<br><span>선생님 소개</span>`, '과목과 학습 목표에 맞는 선생님을 상담으로 안내합니다.', crumb([['홈', './'], ['등록 선생님', 'teachers/'], [s.n + '과외 선생님']])),
+      sec('white', s.n + ' 선생님 소개 예시', '아래 이름과 경력은 소개 형식을 보여주는 가상 예시입니다. 실제 등록·배정 선생님의 명단이나 경력을 뜻하지 않습니다.', cards),
+      sec('', '다른 과목 선생님 찾기', '', teacherLinks()), final(s.n + ' 30분 무료수업 신청')].join('\n')
+  });
+}
+
 page('subjects/', {
   TITLE: '수업 과목 15개 · 과목별 안내 | 무안 화상과외',
   DESC: '국어·수학·영어·과학·사회·코딩 등 무안 화상과외 과목별 수업 안내.',
