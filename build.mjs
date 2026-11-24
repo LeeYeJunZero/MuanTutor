@@ -176,7 +176,8 @@ function page(path, v) {
     all.MAIN = all.MAIN.replace(/<div class="picker">[\s\S]*?<div class="subjects" data-tiles><\/div><\/div>/, '<div class="picker"><h2>어떤 도움이 필요하세요?</h2><p>과목을 누르면 선생님 소개 목록이 열립니다</p>' + teacherLinks() + '</div>');
   } else if (path.startsWith('teachers/')) {
     const subjectName = all.PRESET;
-    all.MAIN = all.MAIN.replace(/<section class="hero"[\s\S]*?<\/section>/, '<section class="doc white" style="padding-bottom:20px"><div class="wrap">' + crumb([['홈', './'], ['등록 선생님', 'teachers/'], [subjectName + '과외 선생님']]) + '<h1>무안 ' + subjectName + '과외 선생님 소개</h1></div></section>');
+    all.MAIN += '<div class="teacher-match"><button class="btn btn-pri" type="button" data-subject="' + esc(subjectName) + '">' + esc(subjectName) + ' 선생님 매칭 · 30분 무료수업</button></div>';
+    all.MAIN = all.MAIN.replace(/<section class="hero"[\s\S]*?<\/section>/, '<section class="doc white" style="padding:28px 0 12px"><div class="wrap">' + crumb([['홈', './'], ['등록 선생님', 'teachers/'], [subjectName + '과외 선생님']]) + '<h1>무안 ' + subjectName + '과외 선생님 소개</h1></div></section>');
   }
   all.OG_TITLE ??= all.TITLE.split(' | ')[0];
   const html = tpl.replace(/\{\{(\w+)\}\}/g, (m, k) => { assert.ok(k in all, `빠진 값: ${k} (${path})`); return all[k]; });
@@ -251,15 +252,15 @@ page('teachers/', {
 });
 for (const s of SUBJECTS) {
   const examples = TEACHERS[s.slug];
-  const renderCards = (list) => '<div class="teacher-grid">' + list.map(({name, years, focusIndex}) => `<article class="box teacher-card"><div class="teacher-avatar" aria-hidden="true">${esc(name[0])}</div><h3>${esc(name)} 선생님</h3><p class="teacher-subject">${s.n} 1:1 화상과외</p><p class="teacher-years"><strong>수업 경력 ${years}년</strong></p><p class="teacher-focus">수업 분야 · ${esc(s.courses[focusIndex % s.courses.length])}</p><button class="btn btn-pri" type="button" data-subject="${s.n}">${s.n} 선생님 매칭 상담</button></article>`).join('') + '</div>';
-  const cards = renderCards(examples.slice(0,8)) + '<details class="teacher-more"><summary>선생님 12명 더 보기</summary>' + renderCards(examples.slice(8)) + '</details>';
+  const renderCards = (list) => '<div class="teacher-grid">' + list.map(({name, years, focusIndex, intro}) => `<article class="box teacher-card"><div class="teacher-avatar" aria-hidden="true">${esc(name[0])}</div><h3>${esc(name)} 선생님</h3><p class="teacher-subject">${s.n} 1:1 화상과외</p><p class="teacher-years"><strong>수업 경력 ${years}년</strong></p><p class="teacher-focus">수업 분야 · ${esc(s.courses[focusIndex % s.courses.length])}</p><p class="teacher-intro">${esc(intro)}</p><button class="btn btn-pri" type="button" data-subject="${s.n}">매칭 상담</button></article>`).join('') + '</div>';
+  const cards = renderCards(examples);
   page(`teachers/${s.slug}/`, {
     PRESET: s.n,
     TITLE: `무안 ${s.n}과외 선생님 소개 · 매칭 상담 | 무안 화상과외`,
     DESC: `무안 ${s.n}과외 선생님 소개. 배정 가능한 선생님과 수업 시간은 상담 후 안내하며 30분 무료수업을 신청할 수 있습니다.`,
     KEYWORDS: `무안 ${s.n}과외 선생님,남악 ${s.n}과외 선생님`,
     MAIN: [hero(`무안 ${s.n}과외<br><span>선생님 소개</span>`, '과목과 학습 목표에 맞는 선생님을 상담으로 안내합니다.', crumb([['홈', './'], ['등록 선생님', 'teachers/'], [s.n + '과외 선생님']])),
-      sec('white', s.n + ' 선생님 소개', '과목별 소개 프로필 20개 · 먼저 8개를 살펴보세요', cards),
+      sec('white', s.n + ' 선생님 소개', '선생님 20명 · 수업 분야와 자기소개를 한눈에 비교하세요', cards),
       sec('', '다른 과목 선생님 찾기', '', teacherLinks()), final(s.n + ' 30분 무료수업 신청')].join('\n')
   });
 }
