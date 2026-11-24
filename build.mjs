@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import assert from 'node:assert';
 
+const COURSE_HIGHLIGHTS = JSON.parse(fs.readFileSync('data/course-highlights.json', 'utf8'));
 const COURSE_DETAILS = JSON.parse(fs.readFileSync('data/course-details.json', 'utf8'));
 const TEACHERS = JSON.parse(fs.readFileSync('data/teachers.json', 'utf8'));
 const SITE = 'https://leeyejunzero.github.io/MuanTutor/';
@@ -290,7 +291,7 @@ for (const s of SUBJECTS) {
     JSONLD: orgLd([faqLd(s.faq)]),
     MAIN: [hero(`무안 ${s.n}과외 · 남악 ${s.n}과외<br><span>1:1 화상 ${s.n} 과외</span>`, s.about, crumb([['무안 화상과외', './'], [`${s.n}과외`]])),
       sec('', `무안 ${s.n}과외 학년별 수업`, '학년과 목표에 맞춰 수업 내용을 정합니다',
-        `<div class="grid3 level-grid">${s.levels.map(([k, t], i) => `<article class="box level-card"><h3><span class="k">${k}</span></h3><p class="level-overview">${esc(t)}</p><dl>${COURSE_DETAILS[s.slug][i].map((text,j) => `<div><dt>${['시작 전 점검','배우는 내용','수업과 연습','학습 목표'][j]}</dt><dd>${esc(text)}</dd></div>`).join('')}</dl></article>`).join('')}</div>`),
+        `<div class="grid3 level-grid">${s.levels.map(([k, t], i) => `<article class="box level-card" tabindex="0" aria-label="${k} ${s.n} 수업 안내"><h3>${k}<span>${s.n} 맞춤 수업</span></h3><ul class="level-points">${COURSE_HIGHLIGHTS[s.slug][i].slice(0,3).map((text) => `<li>${esc(text)}</li>`).join('')}</ul><p class="level-goal">목표 · ${esc(COURSE_HIGHLIGHTS[s.slug][i][3])}</p><details class="level-detail"><summary>자세한 수업 안내</summary><p>${esc(t)}</p><dl>${COURSE_DETAILS[s.slug][i].map((text,j) => `<div><dt>${['시작 전 점검','배우는 내용','수업과 연습','학습 목표'][j]}</dt><dd>${esc(text)}</dd></div>`).join('')}</dl></details></article>`).join('')}</div>`),
       sec('white', s.topics ? `${s.n} 수업 주제` : `${s.n} 교육과정과 시험`, '',
         `<div class="grid2"><div class="box"><h3>${s.topics ? '이런 내용을 배워요' : '고등학교 과목 (2022 개정 교육과정)'}</h3><ul>${s.courses.map((c) => `<li>${c}</li>`).join('')}</ul></div><div class="box"><h3>알아두면 좋은 점</h3><ul>${s.exam.map((c) => `<li>${c}</li>`).join('')}</ul></div></div>`),
       sec('', `${s.n} 수업은 이렇게 진행돼요`, '1:1 화상 수업 한 번의 흐름', `<ol class="steps">${s.lesson.map((t) => `<li><b>${t}</b></li>`).join('')}</ol>`),

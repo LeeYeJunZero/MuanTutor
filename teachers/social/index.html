@@ -256,7 +256,25 @@ body.lock .teacher-match{visibility:hidden}
 @media(max-width:800px){.teacher-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.teacher-grid{gap:10px}.teacher-card{display:flex;padding:13px;gap:7px}.teacher-card h3{font-size:15px}.teacher-card p{font-size:13px}.teacher-card .teacher-avatar{width:36px;height:36px}.teacher-match{bottom:calc(12px + env(safe-area-inset-bottom))}.teacher-match .btn{font-size:15px}}
 
-.level-card{padding:24px}.level-card h3{margin:0 0 8px}.level-card .level-overview{font-weight:600;color:var(--ink);padding-bottom:16px;border-bottom:1px solid var(--line)}.level-card dl{margin:18px 0 0;display:grid;gap:20px}.level-card dt{font-size:15px;font-weight:800;color:var(--pri);margin-bottom:6px}.level-card dd{font-size:15px;line-height:1.8;color:var(--sub);margin:0}.level-grid{align-items:start}@media(max-width:800px){.level-grid{grid-template-columns:1fr}.level-card dl{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}}@media(max-width:560px){.level-card dl{grid-template-columns:1fr}.level-card{padding:20px}}
+.level-grid{align-items:start;gap:20px;isolation:isolate}
+.level-card{position:relative;padding:26px;border:2px solid var(--line);border-radius:20px;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;background:#fff;transform-origin:center center}
+.level-card h3{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 24px;font-size:28px;font-weight:800;color:var(--navy)}
+.level-card h3 span{font-size:14px;font-weight:600;color:var(--sub)}
+.level-points{list-style:none;margin:0;padding:0!important;display:grid;gap:18px}
+.level-card .level-points li{display:flex;gap:10px;align-items:baseline;color:var(--ink);font-size:19px;font-weight:700;line-height:1.5}
+.level-points li::before{content:'✓';color:var(--pri);font-size:20px;font-weight:800;flex:none}
+.level-card .level-goal{margin:24px 0 0;padding:16px 12px;background:var(--pri-soft);border-radius:12px;color:var(--navy);font-size:17px;font-weight:800;line-height:1.5}
+.level-detail{margin-top:20px;border-top:1px solid var(--line)}
+.level-detail summary{padding:16px 0 0;font-size:16px;color:var(--sub);font-weight:600;cursor:pointer;min-height:44px}
+.level-detail>p{margin-top:18px;font-size:17px;color:var(--sub);line-height:1.8}
+.level-detail dl{margin:20px 0 0;display:grid;gap:22px}
+.level-detail dt{font-size:17px;font-weight:800;color:var(--pri);margin-bottom:8px}
+.level-detail dd{font-size:17px;line-height:1.8;color:var(--sub);margin:0}
+.level-card:focus-visible,.level-card:focus-within{border-color:var(--pri);box-shadow:0 12px 32px rgba(47,91,234,.15)}
+@media(hover:hover) and (pointer:fine){.level-card:hover{transform:translateY(-8px) scale(1.025);border-color:var(--pri);box-shadow:0 18px 40px rgba(47,91,234,.2);z-index:2}.level-card:hover h3{color:var(--pri)}}
+@media(max-width:1000px){.level-card{padding:22px 18px}.level-card .level-points li{font-size:18px}.level-card h3{font-size:26px;flex-wrap:wrap}}
+@media(max-width:800px){.level-grid{grid-template-columns:1fr}.level-card{padding:24px}.level-card h3{font-size:28px}.level-card .level-points li{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.level-card{transition:none}.level-card:hover{transform:none}}
 </style>
 </head>
 <body data-preset="사회" data-school="">
