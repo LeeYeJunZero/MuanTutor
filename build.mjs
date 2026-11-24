@@ -196,7 +196,7 @@ const subjLinks = (list, pre = '무안 ') => `<div class="subj-links">${list.map
 const schoolLinks = (list) => KIND_ORDER.map((k) => list.filter((s) => s.kind === k)).filter((g) => g.length).map((g) =>
   `<div class="group"><h3>${g[0].kind}</h3><div class="chips-list links">${g.map((s) => `<a href="school/${s.name}/">${s.short}</a>`).join('')}</div></div>`).join('');
 const areaCards = (suffix = '과외') => `<div class="areas-grid">${REGIONS.map(([e, ri, ex]) => `<a class="area-card" href="area/${e}/"><h3>무안 ${e} ${suffix}</h3><p>${[...ex, ...ri].join(' · ')}</p></a>`).join('')}</div>`;
-const stats = `<div class="stats"><div class="wrap"><div><b>500<em>+</em></b><span>등록 선생님</span></div><div><b>${SUBJECTS.length}<em>개</em></b><span>수업 과목</span></div><div><b>${SCHOOLS.length}<em>곳</em></b><span>무안 학교 정보</span></div><div><b>30<em>분</em></b><span>무료 체험 수업</span></div></div></div>`;
+const stats = `<div class="stats"><div class="wrap"><a href="teachers/"><b>500<em>+</em></b><span>등록 선생님</span></a><a href="subjects/"><b>${SUBJECTS.length}<em>개</em></b><span>수업 과목</span></a><a href="schools/"><b>${SCHOOLS.length}<em>곳</em></b><span>무안 학교 정보</span></a><button type="button" data-open><b>30<em>분</em></b><span>무료 체험 수업</span></button></div></div>`;
 const why = `<section><div class="wrap"><div class="sec-head"><span class="eyebrow">WHY ONLINE</span><h2>왜 화상과외인가요?</h2><p>무안 지역 학생들이 화상과외를 선택하는 이유</p></div><div class="cards">
   <div class="card"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><h3>이동 시간 0분</h3><p>읍·면 어디서든 학원 오갈 필요 없이 집에서 바로 수업합니다.</p></div>
   <div class="card"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9L12 4 2 9l10 5 10-5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></svg></span><h3>선생님 500명 이상</h3><p>지역에서 찾기 어려운 과목도 전문 선생님을 연결합니다.</p></div>
@@ -225,6 +225,28 @@ page('', {
     sec('white', '무안 학교별 과외 · 급식표 · 학사일정', '학교를 누르면 학교 소개와 이번 주 급식표, 이번 달 학사일정을 볼 수 있습니다', schoolLinks(SCHOOLS), 'schools'),
     sec('', '무안군 지역별 과외', '3읍 6면 어디서든 화상으로 같은 수업을 받을 수 있습니다', areaCards(), 'areas'),
     sec('white', '자주 묻는 질문', '', faqHtml(MAIN_FAQ), 'faq'), final()].join('\n')
+});
+
+// 숫자 안내에서 연결되는 목록·소개 페이지
+page('teachers/', {
+  TITLE: '선생님 소개 · 무료 매칭 | 무안 화상과외',
+  DESC: '무안 화상과외 선생님 소개와 매칭 안내. 과목·학년·목표와 가능한 시간에 맞춰 상담하고 30분 무료수업을 신청하세요.',
+  KEYWORDS: '무안 과외 선생님,남악 과외 선생님,무안 화상과외',
+  MAIN: [hero('우리 아이에게 맞는<br><span>선생님을 만나보세요</span>', '등록 선생님 500명 이상. 과목과 학년, 학습 목표를 상담한 뒤 선생님을 안내해 드립니다.', crumb([['홈', './'], ['선생님 소개']])),
+    sec('', '선생님 매칭 안내', '학생에게 필요한 수업부터 확인합니다', '<div class="grid3"><article class="box"><h3>과목과 학년</h3><p>배우려는 과목과 현재 학년, 어려운 단원을 알려주세요.</p></article><article class="box"><h3>학습 목표와 시간</h3><p>학교 내신, 수능, 기초 보충 등 목표와 가능한 수업 시간을 확인합니다.</p></article><article class="box"><h3>30분 무료수업</h3><p>선생님과 직접 수업하며 설명 방식과 학습 속도를 확인하세요.</p></article></div>'),
+    sec('white', '어떤 과목 선생님을 찾으세요?', '과목별 수업 안내를 확인하고 상담 팝업에서 신청할 수 있습니다.', subjLinks(SUBJECTS)), final()].join('\n')
+});
+page('subjects/', {
+  TITLE: '수업 과목 15개 · 과목별 안내 | 무안 화상과외',
+  DESC: '국어·수학·영어·과학·사회·코딩 등 무안 화상과외 과목별 수업 안내.',
+  KEYWORDS: '무안 과외 과목,남악 과외,무안 화상과외',
+  MAIN: [hero('필요한 과목부터<br><span>1:1 맞춤 수업</span>', '과목을 선택하면 학년별 수업 내용과 공부법을 확인할 수 있습니다.', crumb([['홈', './'], ['수업 과목']])), sec('', '전체 수업 과목', '15개 과목의 자세한 안내를 확인하세요.', subjLinks(SUBJECTS)), final()].join('\n')
+});
+page('schools/', {
+  TITLE: '무안 학교 정보 · 급식표 · 학사일정 | 무안 화상과외',
+  DESC: '무안군 학교 39곳의 학교 소개, 설립일, 급식표와 학사일정을 확인하세요.',
+  KEYWORDS: '무안 학교 정보,무안 학교 급식표,무안 학교 학사일정',
+  MAIN: [hero('무안 학교 정보를<br><span>한곳에서 확인하세요</span>', '학교를 누르면 학교 소개와 설립일, 급식표, 학사일정을 확인할 수 있습니다.', crumb([['홈', './'], ['무안 학교 정보']])), sec('', '무안 학교 목록', '고등학교·중학교·초등학교별로 확인하세요.', schoolLinks(SCHOOLS)), final()].join('\n')
 });
 
 // ───── 과목 ─────
