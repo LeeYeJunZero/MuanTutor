@@ -275,6 +275,28 @@ body.lock .teacher-match{visibility:hidden}
 @media(max-width:1000px){.level-card{padding:22px 18px}.level-card .level-points li{font-size:18px}.level-card h3{font-size:26px;flex-wrap:wrap}}
 @media(max-width:800px){.level-grid{grid-template-columns:1fr}.level-card{padding:24px}.level-card h3{font-size:28px}.level-card .level-points li{font-size:20px}}
 @media(prefers-reduced-motion:reduce){.level-card{transition:none}.level-card:hover{transform:none}}
+
+.curr-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.curr-facts>div{padding:22px 18px;border-radius:16px;background:var(--pri-soft);border:1px solid #d8e2ff}
+.curr-facts span,.curr-facts small{display:block;color:var(--sub);font-size:15px}.curr-facts b{display:block;margin:8px 0;color:var(--navy);font-size:25px;letter-spacing:-.03em}
+.curriculum .curr-heading{font-size:25px;margin:42px 0 14px;color:var(--navy);line-height:1.4}
+.curriculum .curr-lead{font-size:17px;color:var(--sub);margin:0 0 22px}
+.curr-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.curr-card{padding:24px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 4px 14px rgba(11,29,69,.04)}
+.curr-type{font-size:15px;font-weight:700;color:var(--pri);display:inline-block;padding:4px 10px;background:var(--pri-soft);border-radius:8px}
+.curr-card h4{font-size:23px;margin:14px 0 10px;line-height:1.4;color:var(--navy)}
+.curriculum .curr-summary{font-size:17px;font-weight:600;color:var(--sub);margin:0 0 18px}
+.curr-points{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px}
+.curr-points li{display:flex;gap:9px;font-size:18px;font-weight:700;line-height:1.6;color:var(--ink)}
+.curr-points li::before{content:'✓';color:var(--pri);font-weight:800;flex:none}
+.curr-card details{margin-top:20px;border-top:1px solid var(--line)}
+.curriculum summary{font-size:17px;font-weight:700;cursor:pointer;min-height:48px;padding:15px 0;color:var(--navy)}
+.curriculum details p,.curriculum dd{font-size:17px;line-height:1.85;color:var(--sub);margin:0}
+.curriculum dl{margin:12px 0 0;display:grid;gap:22px}.curriculum dt{font-size:17px;font-weight:800;color:var(--pri);margin-bottom:6px}
+.curr-questions{display:grid;gap:12px}.curr-questions details{padding:0 20px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}.curr-questions details p{padding-bottom:20px}
+.curr-check{padding:24px;margin-top:32px;background:var(--pri-soft);border-radius:18px}.curr-check h3{margin:0;font-size:23px}.curr-check .btn{margin-top:22px}
+.curriculum .curr-source{font-size:14px;line-height:1.8;color:var(--sub);margin:24px 0 0}.curr-source a{color:var(--pri);text-underline-offset:3px}
+@media(max-width:650px){.curr-grid,.curr-facts{grid-template-columns:1fr}.curr-facts>div{padding:16px 20px}.curr-facts b{font-size:24px}.curr-card{padding:22px}.curriculum .curr-heading{font-size:23px}.curr-points li{font-size:18px}}
 </style>
 </head>
 <body data-preset="" data-school="무안희망초등학교">
