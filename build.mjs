@@ -157,6 +157,10 @@ const fmtDate = (d) => (d && d.length === 8 ? `${+d.slice(0, 4)}년 ${+d.slice(4
 const tpl = fs.readFileSync('template.html', 'utf8');
 const areaOptions = REGIONS.flatMap(([e, , ex]) => [e, ...ex]).map((a) => `<option>${a}</option>`).join('');
 const pages = [];
+const foot = `<div class="cols"><div><a class="logo" href="./"><span>무안 <b>화상과외</b></span></a><a class="tel" href="tel:01022244713">010-2224-4713</a><p style="margin:0">전남 무안군 1:1 화상과외 · 상담 접수 후 순차 연락</p></div>
+<div><h4>과목별 과외</h4><ul>${SUBJECTS.map((s) => `<li><a href="${s.slug}/">${s.n}과외</a></li>`).join('')}</ul></div>
+<div><h4>지역별 과외</h4><ul>${REGIONS.map(([e]) => `<li><a href="area/${e}/">${e}</a></li>`).join('')}</ul></div></div>
+<p class="copy">© ${new Date().getFullYear()} 무안 화상과외 · 학교 정보 출처: 교육부 나이스(NEIS) 교육정보 개방 포털</p>`;
 const orgLd = (extra = []) => JSON.stringify({ '@context': 'https://schema.org', '@graph': [{
   '@type': 'EducationalOrganization', name: '무안 화상과외', url: SITE, telephone: '+82-10-2224-4713',
   description: '전남 무안군 1:1 화상과외 전문. 선생님 500명 이상, 30분 무료수업.',
@@ -166,7 +170,7 @@ const orgLd = (extra = []) => JSON.stringify({ '@context': 'https://schema.org',
 const faqLd = (faq) => ({ '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) });
 function page(path, v) {
   const depth = path.split('/').filter(Boolean).length;
-  const all = { BASE: depth ? `<base href="${'../'.repeat(depth)}">\n` : '', PRESET: '', SCHOOL: '', EXTRA: '', AREA_OPTIONS: areaOptions, URL: SITE + encodeURI(path), JSONLD: orgLd(), ...v };
+  const all = { BASE: depth ? `<base href="${'../'.repeat(depth)}">\n` : '', PRESET: '', SCHOOL: '', EXTRA: '', AREA_OPTIONS: areaOptions, FOOT: foot, URL: SITE + encodeURI(path), JSONLD: orgLd(), ...v };
   all.OG_TITLE ??= all.TITLE.split(' | ')[0];
   const html = tpl.replace(/\{\{(\w+)\}\}/g, (m, k) => { assert.ok(k in all, `빠진 값: ${k} (${path})`); return all[k]; });
   if (path) fs.mkdirSync(path, { recursive: true });
@@ -180,25 +184,26 @@ const hero = (h1, desc, top = '<span class="tag">전남 무안 · 남악 · 오�
     <h1 id="heroTitle">${h1}</h1>
     <p class="desc">${desc}</p>
     <ul class="facts"><li>검증된 선생님 500명 이상</li><li>통학 시간 없이 집에서 1:1 수업</li><li>30분 무료수업 · 상담·매칭 무료</li></ul>
-    <div class="hero-cta"><button class="btn btn-pri" type="button" data-open>30분 무료수업 신청</button><a class="btn btn-ghost" href="tel:01022244713">📞 010-2224-4713</a></div>
+    <div class="hero-cta"><button class="btn btn-pri" type="button" data-open>30분 무료수업 신청</button><a class="btn btn-ghost" href="tel:01022244713"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>010-2224-4713</a></div>
   </div>
   <div class="picker"><h2>어떤 도움이 필요하세요?</h2><p>과목만 고르시면 맞는 선생님을 찾아 연락드립니다</p><div class="subjects" data-tiles></div></div>
 </div></section>`;
 const crumb = (items) => `<nav class="crumbs" aria-label="현재 위치">${items.map(([t, h]) => (h ? `<a href="${h}">${t}</a>` : t)).join(' › ')}</nav>`;
-const sec = (cls, h2, lead, body) => `<section class="doc ${cls}"><div class="wrap"><h2>${h2}</h2>${lead ? `<p class="lead">${lead}</p>` : ''}${body}</div></section>`;
-const final = (t = '30분 무료수업 받아보세요') => `<section class="final"><div class="wrap"><div class="sec-head"><h2>${t}</h2><p>과목과 연락처만 남기시면 바로 연락드립니다</p></div><button class="btn btn-pri" type="button" data-open>무료 상담 신청</button> <a class="btn btn-ghost" href="tel:01022244713">📞 010-2224-4713</a></div></section>`;
+const sec = (cls, h2, lead, body, id = '') => `<section class="doc ${cls}"${id ? ` id="${id}"` : ''}><div class="wrap"><h2>${h2}</h2>${lead ? `<p class="lead">${lead}</p>` : ''}${body}</div></section>`;
+const final = (t = '30분 무료수업 받아보세요') => `<section class="final"><div class="wrap"><div><h2>${t}</h2><p>과목과 연락처만 남기시면 바로 연락드립니다</p><button class="btn btn-pri" type="button" data-open>무료 상담 신청</button> <a class="btn btn-ghost" href="tel:01022244713"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>010-2224-4713</a></div></div></section>`;
 const faqHtml = (faq) => `<div class="faq" style="max-width:none">${faq.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join('')}</div>`;
 const subjLinks = (list, pre = '무안 ') => `<div class="subj-links">${list.map((s) => `<a href="${s.slug}/">${pre}${s.n}과외</a>`).join('')}</div>`;
 const schoolLinks = (list) => KIND_ORDER.map((k) => list.filter((s) => s.kind === k)).filter((g) => g.length).map((g) =>
   `<div class="group"><h3>${g[0].kind}</h3><div class="chips-list links">${g.map((s) => `<a href="school/${s.name}/">${s.short}</a>`).join('')}</div></div>`).join('');
 const areaCards = (suffix = '과외') => `<div class="areas-grid">${REGIONS.map(([e, ri, ex]) => `<a class="area-card" href="area/${e}/"><h3>무안 ${e} ${suffix}</h3><p>${[...ex, ...ri].join(' · ')}</p></a>`).join('')}</div>`;
-const why = `<section><div class="wrap"><div class="sec-head"><h2>왜 화상과외인가요?</h2><p>무안 지역 학생들이 화상과외를 선택하는 이유</p></div><div class="cards">
-  <div class="card"><span class="ico" aria-hidden="true">🏠</span><h3>이동 시간 0분</h3><p>읍·면 어디서든 학원 오갈 필요 없이 집에서 바로 수업합니다.</p></div>
-  <div class="card"><span class="ico" aria-hidden="true">🎓</span><h3>선생님 500명 이상</h3><p>지역에서 찾기 어려운 과목도 전문 선생님을 연결합니다.</p></div>
-  <div class="card"><span class="ico" aria-hidden="true">🎯</span><h3>내신·수능 맞춤</h3><p>학교 시험 범위에 맞춘 내신 대비와 수능 대비를 함께 합니다.</p></div>
-  <div class="card"><span class="ico" aria-hidden="true">📝</span><h3>수업 내용 공유</h3><p>수업 후 학습 내용을 학부모님께 알려드립니다.</p></div>
+const stats = `<div class="stats"><div class="wrap"><div><b>500<em>+</em></b><span>등록 선생님</span></div><div><b>${SUBJECTS.length}<em>개</em></b><span>수업 과목</span></div><div><b>${SCHOOLS.length}<em>곳</em></b><span>무안 학교 정보</span></div><div><b>30<em>분</em></b><span>무료 체험 수업</span></div></div></div>`;
+const why = `<section><div class="wrap"><div class="sec-head"><span class="eyebrow">WHY ONLINE</span><h2>왜 화상과외인가요?</h2><p>무안 지역 학생들이 화상과외를 선택하는 이유</p></div><div class="cards">
+  <div class="card"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><h3>이동 시간 0분</h3><p>읍·면 어디서든 학원 오갈 필요 없이 집에서 바로 수업합니다.</p></div>
+  <div class="card"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9L12 4 2 9l10 5 10-5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></svg></span><h3>선생님 500명 이상</h3><p>지역에서 찾기 어려운 과목도 전문 선생님을 연결합니다.</p></div>
+  <div class="card"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><h3>내신·수능 맞춤</h3><p>학교 시험 범위에 맞춘 내신 대비와 수능 대비를 함께 합니다.</p></div>
+  <div class="card"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span><h3>수업 내용 공유</h3><p>수업 후 학습 내용을 학부모님께 알려드립니다.</p></div>
 </div></div></section>`;
-const steps = `<section class="white"><div class="wrap"><div class="sec-head"><h2>상담부터 첫 수업까지</h2><p>신청만 하시면 나머지는 저희가 진행합니다</p></div><ol class="steps">
+const steps = `<section class="white"><div class="wrap"><div class="sec-head"><span class="eyebrow">PROCESS</span><h2>상담부터 첫 수업까지</h2><p>신청만 하시면 나머지는 저희가 진행합니다</p></div><ol class="steps">
   <li><b>상담 신청</b><span>과목과 연락처만 남겨주세요</span></li><li><b>30분 무료수업</b><span>선생님과 먼저 수업해 보세요</span></li>
   <li><b>선생님 매칭</b><span>맞는 선생님을 추천해 드려요</span></li><li><b>화상 수업 시작</b><span>노트북·태블릿만 있으면 OK</span></li>
 </ol></div></section>`;
@@ -215,11 +220,11 @@ page('', {
   DESC: '무안과외·남악과외·오룡과외 찾으세요? 전남 무안군 화상과외 전문, 선생님 500명 이상. 수학·영어·국어·과학·사회·물리·화학·코딩·영어회화 1:1 과외, 30분 무료수업. 무안 학교별 급식표·학사일정 안내. ☎ 010-2224-4713',
   KEYWORDS: ['무안과외', '남악과외', '오룡과외', '남악신도시 과외', '무안 화상과외', ...SUBJECTS.map((s) => `무안 ${s.n}과외`), ...REGIONS.map(([e]) => `무안 ${e} 과외`)].join(','),
   JSONLD: orgLd([faqLd(MAIN_FAQ)]),
-  MAIN: [hero('무안 과외 · 남악 과외<br><span>1:1 화상과외</span>', '선생님 500명 이상 중에서 우리 아이에게 맞는 선생님을 무료로 찾아드립니다.'), why, steps,
-    sec('', '무안·남악 과목별 과외', '과목을 누르면 학년별 수업 내용, 교육과정, 공부법을 볼 수 있습니다', subjLinks(SUBJECTS)),
-    sec('white', '무안 학교별 과외 · 급식표 · 학사일정', '학교를 누르면 학교 소개와 이번 주 급식표, 이번 달 학사일정을 볼 수 있습니다', schoolLinks(SCHOOLS)),
-    sec('', '무안군 지역별 과외', '3읍 6면 어디서든 화상으로 같은 수업을 받을 수 있습니다', areaCards()),
-    sec('white', '자주 묻는 질문', '', faqHtml(MAIN_FAQ)), final()].join('\n')
+  MAIN: [hero('무안 과외 · 남악 과외<br><span>1:1 화상과외</span>', '선생님 500명 이상 중에서 우리 아이에게 맞는 선생님을 무료로 찾아드립니다.'), stats, why, steps,
+    sec('', '무안·남악 과목별 과외', '과목을 누르면 학년별 수업 내용, 교육과정, 공부법을 볼 수 있습니다', subjLinks(SUBJECTS), 'subjects'),
+    sec('white', '무안 학교별 과외 · 급식표 · 학사일정', '학교를 누르면 학교 소개와 이번 주 급식표, 이번 달 학사일정을 볼 수 있습니다', schoolLinks(SCHOOLS), 'schools'),
+    sec('', '무안군 지역별 과외', '3읍 6면 어디서든 화상으로 같은 수업을 받을 수 있습니다', areaCards(), 'areas'),
+    sec('white', '자주 묻는 질문', '', faqHtml(MAIN_FAQ), 'faq'), final()].join('\n')
 });
 
 // ───── 과목 ─────
