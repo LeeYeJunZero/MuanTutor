@@ -237,7 +237,7 @@ page('', {
 // 과목별 선생님 소개와 상담 연결
 const teacherLinks = () => {
   const tiles = [['📖','korean'],['🔤','english'],['📐','math'],['🔬','science'],['🗺️','social'],['🏛️','history'],['⚛️','physics'],['🧪','chemistry'],['🧬','biology'],['🌏','earth-science'],['💻','coding'],['💬','english-conversation'],['✍️','essay'],['🧭','self-study'],['🈶','foreign-language']];
-  return '<div class="subjects teacher-subjects">' + tiles.map(([icon,slug]) => { const s=SUBJECTS.find((s)=>s.slug===slug); return `<a class="subj" style="text-decoration:none" href="teachers/${s.slug}/"><i aria-hidden="true">${icon}</i><span>${s.n}<wbr>과외</span></a>`; }).join('') + '</div>';
+  return '<div class="subjects teacher-subjects">' + tiles.map(([icon,slug]) => { const s=SUBJECTS.find((s)=>s.slug===slug); return `<a class="subj" aria-label="${s.n}과외 선생님 목록" href="teachers/${s.slug}/"><i aria-hidden="true">${icon}</i><span>${s.n}<wbr>과외</span></a>`; }).join('') + '</div>';
 };
 
 // 숫자 안내에서 연결되는 목록·소개 페이지
