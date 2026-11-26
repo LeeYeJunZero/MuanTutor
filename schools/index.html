@@ -188,6 +188,41 @@ input:focus,select:focus,textarea:focus{outline:0;border-color:var(--pri);box-sh
 .subj-links a{display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-decoration:none;font-weight:700;box-shadow:var(--sh);transition:.15s}
 .subj-links a:hover{border-color:var(--pri);color:var(--pri)}.subj-links a::after{content:"→";color:var(--pri)}
 
+/* 수업 안내 팝업 */
+.guide{border:0;padding:0;border-radius:24px;width:min(720px,calc(100% - 24px));max-height:calc(100% - 32px);box-shadow:var(--sh-lg);overflow:hidden;flex-direction:column}
+.guide[open]{display:flex}
+.guide::backdrop{background:rgba(8,18,44,.6);backdrop-filter:blur(3px)}
+.g-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:22px 24px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff}
+.g-head h2{margin:0;font-size:22px;letter-spacing:-.03em}
+.g-head .x{background:rgba(255,255,255,.12);border:0;border-radius:50%;width:38px;height:38px;font-size:24px;line-height:1;color:#fff;cursor:pointer;flex:none}
+.g-body{overflow:auto;padding:8px 24px 24px;font-size:16px}
+.g-body h3{font-size:15px;color:var(--navy);margin:24px 0 10px;padding-left:10px;border-left:4px solid var(--pri);line-height:1.3}
+.g-body .level-points{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.g-body .level-points li{display:flex;gap:10px;align-items:baseline;background:var(--bg);border-radius:12px;padding:12px 14px;font-size:17px;font-weight:700;color:var(--ink)}
+.g-body .level-goal{margin:10px 0 0;padding:14px 16px;background:var(--pri-soft);border-radius:12px;color:var(--navy);font-size:16px;font-weight:800}
+.g-detail>p{margin:0 0 16px;font-size:16px;color:var(--sub);line-height:1.8}
+.g-detail dl{margin:0;display:grid;gap:10px}
+.g-detail dl>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.g-detail dt{font-size:15px;font-weight:800;color:var(--pri);margin-bottom:4px}
+.g-detail dd{margin:0;font-size:16px;line-height:1.75;color:var(--sub)}
+.g-foot{display:grid;grid-template-columns:1fr 2fr;gap:10px;padding:14px 24px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:#fff}
+/* 팝업 나타남·사라짐 연출 */
+@keyframes popIn{from{opacity:0;transform:translateY(24px) scale(.95)}to{opacity:1;transform:none}}
+@keyframes popOut{to{opacity:0;transform:translateY(12px) scale(.97)}}
+@keyframes sheetIn{from{transform:translateY(100%)}to{transform:none}}
+@keyframes sheetOut{to{transform:translateY(100%)}}
+@keyframes fadeIn{from{opacity:0}}
+@keyframes fadeOut{to{opacity:0}}
+@keyframes stepIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+.dlg[open],.guide[open]{animation:popIn .32s cubic-bezier(.2,.9,.3,1.15)}
+.dlg[open]::backdrop,.guide[open]::backdrop{animation:fadeIn .25s ease}
+.dlg.closing,.guide.closing{animation:popOut .18s ease forwards}
+.dlg.closing::backdrop,.guide.closing::backdrop{animation:fadeOut .18s ease forwards}
+.dlg [data-step]{animation:stepIn .28s ease}
+.g-body>*{animation:stepIn .35s ease both}.g-body>:nth-child(2){animation-delay:.04s}.g-body>:nth-child(3){animation-delay:.08s}.g-body>:nth-child(4){animation-delay:.12s}.g-body>:nth-child(5){animation-delay:.16s}
+@media (max-width:560px){.guide{width:100%;max-width:100%;max-height:90%;margin:auto 0 0;border-radius:22px 22px 0 0}.guide[open]{animation:sheetIn .34s cubic-bezier(.2,.8,.2,1)}.guide.closing{animation:sheetOut .18s ease forwards}.g-head{padding:18px 16px}.g-body{padding:4px 16px 20px}.g-foot{padding:12px 16px calc(12px + env(safe-area-inset-bottom))}.g-foot .btn{font-size:15px;padding:12px 10px}}
+@media (prefers-reduced-motion:reduce){.dlg[open],.guide[open],.dlg.closing,.guide.closing,.dlg [data-step],.g-body>*{animation:none!important}}
+
 .bar{display:none}
 @media (max-width:1000px){.gnb{display:none}}
 @media (max-width:900px){
@@ -275,6 +310,13 @@ body.lock .teacher-match{visibility:hidden}
 @media(max-width:1000px){.level-card{padding:22px 18px}.level-card .level-points li{font-size:18px}.level-card h3{font-size:26px;flex-wrap:wrap}}
 @media(max-width:800px){.level-grid{grid-template-columns:1fr}.level-card{padding:24px}.level-card h3{font-size:28px}.level-card .level-points li{font-size:20px}}
 @media(prefers-reduced-motion:reduce){.level-card{transition:none}.level-card:hover{transform:none}}
+/* 카드 속 '자세한 수업 안내' = 팝업 여는 버튼 (펼침 내용은 검색 노출용으로 숨김) */
+.level-detail{border-top:0;margin-top:18px}
+.level-detail>summary{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 16px;min-height:48px;border-radius:12px;background:var(--navy);color:#fff;font-size:16px;font-weight:700;list-style:none;transition:background .15s}
+.level-detail>summary::-webkit-details-marker{display:none}
+.level-detail>summary::after{content:"→"}
+.level-detail>summary:hover{background:var(--pri)}
+.level-detail>:not(summary){display:none}
 
 .curr-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .curr-facts>div{padding:22px 18px;border-radius:16px;background:var(--pri-soft);border:1px solid #d8e2ff}
@@ -333,6 +375,12 @@ body.lock .teacher-match{visibility:hidden}
   <a class="btn btn-ghost" href="tel:01022244713"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>전화</a>
   <button class="btn btn-pri" type="button" data-open>무료 상담 신청</button>
 </nav>
+
+<dialog class="guide" id="guide" aria-labelledby="gTitle">
+  <div class="g-head"><h2 id="gTitle" data-g-title></h2><button class="x" type="button" aria-label="닫기" data-close>×</button></div>
+  <div class="g-body" data-g-body></div>
+  <div class="g-foot"><button class="btn btn-ghost" type="button" data-close>닫기</button><button class="btn btn-pri" type="button" data-g-cta>무료수업 신청</button></div>
+</dialog>
 
 <dialog class="dlg" id="lead" aria-labelledby="leadTitle" data-at="1">
   <button class="x" type="button" aria-label="닫기" data-close>×</button>
@@ -399,13 +447,36 @@ body.lock .teacher-match{visibility:hidden}
     if (s) setTimeout(() => form.elements.name.focus(), 50);
   };
   dlg.addEventListener('close', () => document.body.classList.remove('lock'));
-  dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
-  dlg.querySelector('[data-close]').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) shut(dlg); });
+  dlg.querySelector('[data-close]').addEventListener('click', () => shut(dlg));
   dlg.querySelector('[data-back]').addEventListener('click', () => go(1));
 
+  // 학년별 카드 '자세한 수업 안내' → 팝업 (카드 안 <details> 내용은 검색 노출용으로 그대로 두고 팝업에 복사해 보여줌)
+  const gd = document.getElementById('guide');
+  const showGuide = (card) => {
+    const lv = card.querySelector('h3').firstChild.textContent.trim();
+    const pick = (sel) => { const x = card.querySelector(sel); return x ? x.outerHTML : ''; };
+    const det = card.querySelector('.level-detail').cloneNode(true);
+    det.querySelector('summary').remove();
+    gd.querySelector('[data-g-title]').textContent = `${lv} ${preset}과외 수업 안내`;
+    gd.querySelector('[data-g-body]').innerHTML = `<h3>핵심 내용</h3>${pick('.level-points')}${pick('.level-goal')}<h3>자세한 안내</h3><div class="g-detail">${det.innerHTML}</div>`;
+    const cta = gd.querySelector('[data-g-cta]');
+    cta.dataset.subject = preset; cta.textContent = `${lv} ${preset} 30분 무료수업 신청`;
+    gd.querySelector('[data-g-body]').scrollTop = 0;
+    gd.showModal(); document.body.classList.add('lock');
+  };
+  // 닫을 때도 짧게 사라지는 연출 (Esc 는 브라우저가 바로 닫음)
+  const shut = (d) => { if (!d.open || d.classList.contains('closing')) return; d.classList.add('closing'); setTimeout(() => { d.classList.remove('closing'); d.close(); }, 180); };
+  gd.addEventListener('close', () => { if (!dlg.open) document.body.classList.remove('lock'); });
+  gd.addEventListener('click', (e) => { if (e.target === gd) shut(gd); });
+  gd.querySelectorAll('[data-close]').forEach((b) => b.addEventListener('click', () => shut(gd)));
+
   document.addEventListener('click', (e) => {
+    const sm = e.target.closest('.level-detail > summary');
+    if (sm && preset) { e.preventDefault(); showGuide(sm.closest('.level-card')); return; }
     const el = e.target.closest('[data-subject], [data-open], a[href^="tel:"]');
     if (!el) return;
+    if (gd.open) gd.close();
     // 과목·전화·상담 버튼 클릭 → 텔레그램 클릭 알림 (Worker 가 1분마다 묶어서 보냄)
     const label = el.dataset.subject ? el.dataset.subject + '과외' : el.hasAttribute('data-open') ? '상담 버튼' : '전화';
     fetch(API + '/api/event', { method: 'POST', mode: 'cors', keepalive: true, headers: { 'Content-Type': 'application/json' },
